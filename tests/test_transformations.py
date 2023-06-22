@@ -1,9 +1,9 @@
-import dummy_transformations as dt
+import geci_data as gd
 
 
 def test_add_offset():
     augend = 1
     addend = 2
     expected = augend + addend
-    obtained = dt.add_offset(augend, addend)
+    obtained = gd.add_offset(augend, addend)
     assert expected == obtained
