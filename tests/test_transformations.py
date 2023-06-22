@@ -1,9 +1,10 @@
-import geci_data as gd
+from geci_data import app
+from fastapi.testclient import TestClient
+
+client = TestClient(app)
 
 
-def test_add_offset():
-    augend = 1
-    addend = 2
-    expected = augend + addend
-    obtained = gd.add_offset(augend, addend)
-    assert expected == obtained
+def test_read_main():
+    response = client.get("/")
+    assert response.status_code == 200
+    assert response.json() == {"msg": "Hello World"}
