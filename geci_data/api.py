@@ -1,2 +1,8 @@
-def add_offset(augend: int, addend: int) -> int:
-    return augend + addend
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
+@app.get("/")
+def read_main():
+    return {"msg": "Hello World"}
