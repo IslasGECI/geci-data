@@ -8,3 +8,10 @@ services:
     command: bash
     volumes:
       - $PWD:/workdir
+  core_api:
+    build: .
+    container_name: "core-api-container"
+    ports:
+      - "8000:15400"
+    volumes:
+      - ./geci_data:/geci_data
