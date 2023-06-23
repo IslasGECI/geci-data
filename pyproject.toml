@@ -10,6 +10,7 @@ description-file = "README.md"
 home-page = "https://github.com/IslasGECI/geci_data"
 module = "geci_data"
 requires = [
-	"fastapi"
+	"fastapi",
+	"httpx"
 ]
 requires-python=">=3.9"
