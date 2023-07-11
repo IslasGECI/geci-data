@@ -2,3 +2,6 @@
 # GECI data
 
 API for data distribution
+
+# Referencias
+- [YouTube](https://youtu.be/gVymPpepQco)
