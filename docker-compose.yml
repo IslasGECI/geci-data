@@ -12,6 +12,6 @@ services:
     build: .
     container_name: "core-api-container"
     ports:
-      - "8000:15400"
+      - "100:10000"
     volumes:
       - ./geci_data:/geci_data

@@ -12,4 +12,4 @@ RUN pip install --upgrade pip && pip install \
 
 RUN pip3 install fastapi uvicorn
 COPY ./geci_data /geci_data
-CMD ["uvicorn", "geci_data.api:app", "--host", "0.0.0.0", "--port", "15400"]
+CMD ["uvicorn", "geci_data.api:app", "--host", "0.0.0.0", "--port", "10000"]
