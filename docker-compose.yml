@@ -10,6 +10,7 @@ services:
       - $PWD:/workdir
   external_data_api:
     image: islasgeci/geci_data:latest
+    entrypoint: ["uvicorn", "geci_data.api:app", "--host", "0.0.0.0", "--port", "10000"]
     volumes:
       - $PWD:/workdir
     ports:
