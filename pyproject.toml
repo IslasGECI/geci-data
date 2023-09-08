@@ -11,6 +11,8 @@ home-page = "https://github.com/IslasGECI/geci_data"
 module = "geci_data"
 requires = [
 	"fastapi",
-	"httpx"
+	"httpx",
+	"pandas",
+	"pandas-stubs",
 ]
 requires-python=">=3.9"
