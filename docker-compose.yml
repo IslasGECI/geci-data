@@ -1,11 +1,16 @@
 version: "3.6"
 services:
-  app_develop:
+  islasgeci:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: islasgeci/geci_data:latest
+    command: bash
+    volumes:
+      - $PWD:/workdir
+  external_ui_develop:
     image: islasgeci/internal_download:latest
-    container_name: "app-develop-container"
-    environment:
-      BITBUCKET_USERNAME: $BITBUCKET_USERNAME
-      BITBUCKET_PASSWORD: $BITBUCKET_PASSWORD
+    container_name: "external_ui_develop"
     entrypoint: ["streamlit", "run", "src/streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
     ports:
       - "8502:8501"
@@ -14,9 +19,8 @@ services:
       - $PWD/tabular_data_packages:/workdir/data
     networks:
       - geci
-  core_api:
-    build: .
-    container_name: "core-api-container"
+  data_api:
+    image: islasgeci/geci_data:latest
     volumes:
       - $PWD/geci-data:/workdir
     networks:

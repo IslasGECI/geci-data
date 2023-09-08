@@ -10,7 +10,7 @@ jobs:
     - name: Copia repositorio
       uses: actions/checkout@main
     - name: Construye imagen
-      run: docker build --tag islasgeci/geci_data:latest --tag islasgeci/dummy_transformations:${GITHUB_SHA:0:4} .
+      run: docker build --tag islasgeci/geci_data:latest --tag islasgeci/geci_data:${GITHUB_SHA:0:4} .
     - name: Verifica el formato
       run: docker run islasgeci/geci_data:latest make check
     - name: Corre pruebas y evalúa cobertura
